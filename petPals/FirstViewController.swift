@@ -10,11 +10,10 @@ import UIKit
 import Parse
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
-
-  let petCell = UIView(frame: CGRect(x: 0, y: 8, width: 200, height: 100))
   
   var shon3005 = Profile(name: "Shaun Chua", username: "shon3005", website: "hello.me", aboutMe: "LOL", email: "shaun.chua@nyu.edu", phone: "(347) 302-0851", gender: "Male")
   var items: [String] = ["Dog1", "Dog2", "Dog3","Dog4", "Dog5", "Dog6","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3"]
+  var items1: [String] = ["Dog1", "Dog2", "Dog3","Dog4", "Dog5", "Dog6","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3"]
   
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var websiteLabel: UILabel!
@@ -72,20 +71,29 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     destination.profile = shon3005
   }
 
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-    return self.items.count;
+    return self.items.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    var cell: UITableViewCell = self.tableViewPetProfiles.dequeueReusableCellWithIdentifier("cell")!
+    var cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! PetListTableViewCell
     
-    cell.textLabel?.text = self.items[indexPath.row]
+    cell.petName?.text = items[indexPath.row]
+    cell.petBreed?.text = items1[indexPath.row]
+    //cell.detailTextLabel?.text = items1[indexPath.row]
     
     return cell
   }
   
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Pets"
+  }
 
 }
 
