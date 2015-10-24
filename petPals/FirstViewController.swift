@@ -30,7 +30,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tableViewPetProfiles.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    //self.tableViewPetProfiles.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell1")
     // Do any additional setup after loading the view, typically from a nib.
     let name = shon3005.name
     nameLabel.text = name
@@ -89,6 +89,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     //cell.detailTextLabel?.text = items1[indexPath.row]
     
     return cell
+  }
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+  {
+    return 200.0; //Choose your custom row height
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
