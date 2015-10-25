@@ -10,10 +10,9 @@ import UIKit
 import Parse
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
+  let petProfile = PetProfile()
   
   var shon3005 = Profile(name: "Shaun Chua", username: "shon3005", website: "hello.me", aboutMe: "LOL", email: "shaun.chua@nyu.edu", phone: "(347) 302-0851", gender: "Male")
-  var items: [String] = ["Dog1", "Dog2", "Dog3","Dog4", "Dog5", "Dog6","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3"]
-  var items1: [String] = ["Dog1", "Dog2", "Dog3","Dog4", "Dog5", "Dog6","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3","Dog1", "Dog2", "Dog3"]
   
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var websiteLabel: UILabel!
@@ -77,15 +76,20 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-    return self.items.count
+    return petProfile.pictures.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     var cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! PetListTableViewCell
     
-    cell.petName?.text = items[indexPath.row]
-    cell.petBreed?.text = items1[indexPath.row]
+    let entry = petProfile.pictures[indexPath.row]
+    let image = UIImage(named: entry.filename)
+    cell.petPhoto.image = image
+    cell.petName.text = entry.petName
+    cell.petBreed.text = entry.petBreed
+    //cell.petName?.text = items[indexPath.row]
+    //cell.petBreed?.text = items1[indexPath.row]
     //cell.detailTextLabel?.text = items1[indexPath.row]
     
     return cell

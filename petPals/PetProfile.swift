@@ -10,11 +10,20 @@ import Foundation
 
 class PetProfile {
   class Entry {
+    let petName: String
+    let petBreed: String
     let filename: String
-    let heading: String
-    init(fname: String, heading: String) {
-      self.heading = heading
+    init(petName: String, petBreed: String, fname: String) {
       self.filename = fname
+      self.petName = petName
+      self.petBreed = petBreed
     }
   }
+  
+  let pictures = [
+    Entry(petName: "Marshall", petBreed: "ChowChow", fname: "chua_shaun_profile.jpg"),
+    Entry(petName: "Po", petBreed: "ChowChow", fname: "chua_shaun_profile.jpg"),
+    Entry(petName: "XiaoMing", petBreed: "Persian", fname: "chua_shaun_profile.jpg"),
+    Entry(petName: "Alpha", petBreed: "Boz Shepherd", fname: "chua_shaun_profile.jpg")
+  ]
 }
