@@ -60,12 +60,13 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-QC-JN2">
                                 <rect key="frame" x="156" y="118" width="424" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier=""/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sag-Sg-H94"/>
                                 </constraints>
                                 <state key="normal" title="Edit Profile"/>
                                 <connections>
-                                    <segue destination="zg4-hx-jDE" kind="show" id="r9K-8p-7NF"/>
+                                    <segue destination="zg4-hx-jDE" kind="show" identifier="editProfile" id="r9K-8p-7NF"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFu-Hg-qlC">
@@ -116,11 +117,12 @@
                                                 <constraint firstItem="foX-qE-59a" firstAttribute="trailing" secondItem="OJ0-S9-rfC" secondAttribute="trailing" id="ovH-fG-jbu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier=""/>
                                         <connections>
                                             <outlet property="petBreed" destination="OJ0-S9-rfC" id="WiH-Bw-cqY"/>
                                             <outlet property="petName" destination="foX-qE-59a" id="7RH-Ig-OdK"/>
                                             <outlet property="petPhoto" destination="Q69-Me-tXX" id="4so-wO-EZ7"/>
-                                            <segue destination="W1b-rA-86E" kind="show" id="nND-98-FiB"/>
+                                            <segue destination="W1b-rA-86E" kind="show" identifier="petProfile" id="nND-98-FiB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -232,7 +234,7 @@
         <!--EDIT PROFILE-->
         <scene sceneID="0hL-Fr-eA5">
             <objects>
-                <tableViewController title="EDIT PROFILE" id="zg4-hx-jDE" customClass="EditProfileController" customModule="petPals" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="editProfile" title="EDIT PROFILE" id="zg4-hx-jDE" customClass="EditProfileController" customModule="petPals" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="04u-DN-gH8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

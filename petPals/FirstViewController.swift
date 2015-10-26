@@ -28,6 +28,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
   override func viewDidAppear(animated: Bool) {
     
     super.viewDidAppear(animated)
+    
+    print(shon3005.name)
+    
     nameLabel.text = shon3005.name
     websiteLabel.text = shon3005.website
     aboutMeLabel.text = shon3005.aboutMe
@@ -80,11 +83,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     //let profile = self.profile[indexPath.row]
     
     //determine which segue identifier is being used
-    if segue.identifier == "editProfile" {
+    print(segue.identifier)
+    if (segue.identifier == "editProfile") {
+      print("Test");
       var userDestination = segue.destinationViewController as! EditProfileController
-      userDestination.profile = self.shon3005
+      userDestination.profile = shon3005
     }
-    else if segue.identifier == "petProfile" {
+    else if (segue.identifier == "petProfile") {
       var petDestination = segue.destinationViewController as! PetProfileViewController
       //petDestination.profile = petProfile.pictures[indexPath.row]
     }
