@@ -10,10 +10,16 @@ import UIKit
 import Parse
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
+  
+  // instantiate pet profiles
   let petProfile = PetProfile()
   
+  // instantiate human profile
   var shon3005 = Profile(name: "Shaun Chua", username: "shon3005", website: "hello.me", aboutMe: "LOL", email: "shaun.chua@nyu.edu", phone: "(347) 302-0851", gender: "Male")
   
+  // iboutlets used
+  @IBOutlet weak var followerCount: UILabel!
+  @IBOutlet weak var followingCount: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var websiteLabel: UILabel!
   @IBOutlet weak var aboutMeLabel: UILabel!
@@ -31,6 +37,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     super.viewDidLoad()
     //self.tableViewPetProfiles.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell1")
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // follower and following count to appear when app is first run
+    followerCount.text = "15"
+    followingCount.text = "15"
+    
+    // default info appears when app is first run
     let name = shon3005.name
     nameLabel.text = name
     let website = shon3005.website
@@ -66,19 +78,30 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     //let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
     //let profile = self.profile[indexPath.row]
-    var destination = segue.destinationViewController as! EditProfileController
-    destination.profile = shon3005
+    
+    //determine which segue identifier is being used
+    if segue.identifier == "editProfile" {
+      var userDestination = segue.destinationViewController as! EditProfileController
+      userDestination.profile = self.shon3005
+    }
+    else if segue.identifier == "petProfile" {
+      var petDestination = segue.destinationViewController as! PetProfileViewController
+      //petDestination.profile = petProfile.pictures[indexPath.row]
+    }
   }
 
+  // number of sections in the table view
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
   
+  // number of pet profiles created in the table view
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
     return petProfile.pictures.count
   }
   
+  // each cell in the table view has information about the pet profile
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     var cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! PetListTableViewCell
@@ -95,11 +118,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     return cell
   }
   
+  // cell height is 200
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
   {
     return 200.0; //Choose your custom row height
   }
   
+  // table view header is Pets
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return "Pets"
   }
