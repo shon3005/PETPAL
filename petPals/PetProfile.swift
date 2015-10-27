@@ -20,7 +20,7 @@ class PetProfile {
     }
   }
   
-  let pictures = [
+  let petProfiles = [
     Entry(petName: "Marshall", petBreed: "ChowChow", fname: "chua_shaun_profile.jpg"),
     Entry(petName: "Po", petBreed: "ChowChow", fname: "chua_shaun_profile.jpg"),
     Entry(petName: "XiaoMing", petBreed: "Persian", fname: "chua_shaun_profile.jpg"),

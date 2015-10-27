@@ -29,8 +29,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     
     super.viewDidAppear(animated)
     
-    print(shon3005.name)
-    
     nameLabel.text = shon3005.name
     websiteLabel.text = shon3005.website
     aboutMeLabel.text = shon3005.aboutMe
@@ -83,15 +81,18 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     //let profile = self.profile[indexPath.row]
     
     //determine which segue identifier is being used
-    print(segue.identifier)
     if (segue.identifier == "editProfile") {
-      print("Test");
       var userDestination = segue.destinationViewController as! EditProfileController
       userDestination.profile = shon3005
     }
     else if (segue.identifier == "petProfile") {
       var petDestination = segue.destinationViewController as! PetProfileViewController
-      //petDestination.profile = petProfile.pictures[indexPath.row]
+      
+      if let indexPath = tableViewPetProfiles.indexPathForSelectedRow {
+        let selectedProfile = petProfile.petProfiles[indexPath.row]
+        petDestination.petProfile = selectedProfile
+      }
+      //petDestination.profile = petProfile.petProfiles[indexPath.row]
     }
   }
 
@@ -103,7 +104,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
   // number of pet profiles created in the table view
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-    return petProfile.pictures.count
+    return petProfile.petProfiles.count
   }
   
   // each cell in the table view has information about the pet profile
@@ -111,7 +112,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     
     var cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! PetListTableViewCell
     
-    let entry = petProfile.pictures[indexPath.row]
+    let entry = petProfile.petProfiles[indexPath.row]
     let image = UIImage(named: entry.filename)
     cell.petPhoto.image = image
     cell.petName.text = entry.petName

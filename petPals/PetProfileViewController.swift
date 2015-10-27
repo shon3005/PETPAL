@@ -10,10 +10,20 @@ import UIKit
 
 class PetProfileViewController: UIViewController {
 
+  @IBOutlet weak var petPhotoView: UIImageView!
+  @IBOutlet weak var petNameLabel: UILabel!
+  @IBOutlet weak var petBreedLabel: UILabel!
+  
+  var petProfile : PetProfile.Entry?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+      if let petProfile = self.petProfile {
+        //if let petName = petProfile.petName {
+          //petNameLabel.text = petName
+      }
     }
 
     override func didReceiveMemoryWarning() {
