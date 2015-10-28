@@ -18,11 +18,15 @@ class PetProfileViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+      // display pet information on profile VC
+      self.title = petProfile?.petName
+      
       if let petProfile = self.petProfile {
-        //if let petName = petProfile.petName {
-          //petNameLabel.text = petName
+        petNameLabel.text = petProfile.petName
+        petBreedLabel.text = petProfile.petBreed
+        let image = UIImage(named: petProfile.filename)
+        petPhotoView.image = image
       }
     }
 

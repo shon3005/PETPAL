@@ -39,6 +39,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITextFieldD
     //self.tableViewPetProfiles.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell1")
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.title = shon3005.username
+    
     // follower and following count to appear when app is first run
     followerCount.text = "15"
     followingCount.text = "15"
