@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-//Open up your AppDelegate.m file and add the following import to the top of the file:
 import Parse
 
 @UIApplicationMain
@@ -23,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //Then paste the following inside the application:didFinishLaunchingWithOptions: function:
     Parse.setApplicationId("wazcjNONJMLkpwQcyKAf8IBdkNLpJ1JPUJCc42bE", clientKey: "dNGKCcDUQLr3VBRUsA5GBqcnt5wr00AkXo3cQL9J")
     
-    //And to track statistics around application opens, add the following below that:
-    PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+    try! PFUser.logInWithUsername("test", password: "test")
+    
+    if let currentUser = PFUser.currentUser() {
+      print("\(currentUser.username!) logged in successfully")
+    } else {
+      print("No logged in user :(")
+    }
+
     
     return true
   }

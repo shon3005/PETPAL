@@ -34,6 +34,10 @@
 		4D94CB821BC356C1008A8F6A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D94CB811BC356C1008A8F6A /* libsqlite3.tbd */; };
 		4D9670951BC0B504000313AB /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9670941BC0B504000313AB /* EditProfileController.swift */; };
 		4D9670991BC0CAA3000313AB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9670981BC0CAA3000313AB /* Profile.swift */; };
+		4DCDF8101BE4B7520039A682 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF80F1BE4B7520039A682 /* TimelineViewController.swift */; };
+		4DCDF8121BE4B79D0039A682 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8111BE4B79D0039A682 /* PhotoViewController.swift */; };
+		4DCDF8141BE4B7B30039A682 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8131BE4B7B30039A682 /* FriendSearchViewController.swift */; };
+		4DCDF8171BE505750039A682 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8161BE505750039A682 /* PhotoTakingHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		4D94CB811BC356C1008A8F6A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4D9670941BC0B504000313AB /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		4D9670981BC0CAA3000313AB /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		4DCDF80F1BE4B7520039A682 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		4DCDF8111BE4B79D0039A682 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		4DCDF8131BE4B7B30039A682 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
+		4DCDF8161BE505750039A682 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +159,12 @@
 		4D3D03831BBCDDFE00EE673D /* petPals */ = {
 			isa = PBXGroup;
 			children = (
+				4DCDF8151BE504BB0039A682 /* PhotoTaking */,
 				4D5A684F1BD98A8200706B24 /* PetListTableViewCell.swift */,
 				4D3D03841BBCDDFE00EE673D /* AppDelegate.swift */,
+				4DCDF80F1BE4B7520039A682 /* TimelineViewController.swift */,
+				4DCDF8111BE4B79D0039A682 /* PhotoViewController.swift */,
+				4DCDF8131BE4B7B30039A682 /* FriendSearchViewController.swift */,
 				4D3D03861BBCDDFE00EE673D /* FirstViewController.swift */,
 				4D5A68951BDDE72D00706B24 /* PetProfileViewController.swift */,
 				4D3D03881BBCDDFE00EE673D /* SecondViewController.swift */,
@@ -204,6 +216,14 @@
 				4D94CB691BC354C3008A8F6A /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DCDF8151BE504BB0039A682 /* PhotoTaking */ = {
+			isa = PBXGroup;
+			children = (
+				4DCDF8161BE505750039A682 /* PhotoTakingHelper.swift */,
+			);
+			path = PhotoTaking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,10 +361,14 @@
 				4D3D03891BBCDDFE00EE673D /* SecondViewController.swift in Sources */,
 				4D5A68961BDDE72D00706B24 /* PetProfileViewController.swift in Sources */,
 				4D9670991BC0CAA3000313AB /* Profile.swift in Sources */,
+				4DCDF8141BE4B7B30039A682 /* FriendSearchViewController.swift in Sources */,
 				4D9670951BC0B504000313AB /* EditProfileController.swift in Sources */,
+				4DCDF8171BE505750039A682 /* PhotoTakingHelper.swift in Sources */,
+				4DCDF8101BE4B7520039A682 /* TimelineViewController.swift in Sources */,
 				4D5A68501BD98A8200706B24 /* PetListTableViewCell.swift in Sources */,
 				4D3D03851BBCDDFE00EE673D /* AppDelegate.swift in Sources */,
 				4D3D03871BBCDDFE00EE673D /* FirstViewController.swift in Sources */,
+				4DCDF8121BE4B79D0039A682 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

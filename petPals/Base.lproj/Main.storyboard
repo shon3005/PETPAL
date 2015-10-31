@@ -489,10 +489,10 @@
             </objects>
             <point key="canvasLocation" x="2257" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--home-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="petPals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="TimelineViewController" customModule="petPals" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -523,11 +523,55 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="home" image="Home" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--camera-->
+        <scene sceneID="X8Q-7L-JlN">
+            <objects>
+                <viewController id="F4i-Sp-gKs" customClass="PhotoViewController" customModule="petPals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WDA-QW-fpD"/>
+                        <viewControllerLayoutGuide type="bottom" id="kHW-7Z-vcv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9T2-1y-Zpv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="camera" image="Camera" id="uwX-Zk-MCP">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6k-3h-YnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1014"/>
+        </scene>
+        <!--people-->
+        <scene sceneID="nvs-ul-dub">
+            <objects>
+                <viewController id="dzM-Zd-pQQ" customClass="FriendSearchViewController" customModule="petPals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WrJ-hM-hJP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hsi-GG-roT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0uG-FT-tB6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="people" image="People" id="dUd-GV-74n">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2V-cK-JZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1670"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -540,13 +584,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="g3V-qh-6gm" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="F4i-Sp-gKs" kind="relationship" relationship="viewControllers" id="90c-nC-N4I"/>
+                        <segue destination="dzM-Zd-pQQ" kind="relationship" relationship="viewControllers" id="Zc4-48-BS2"/>
+                        <segue destination="g3V-qh-6gm" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-74" y="10"/>
         </scene>
         <!--First-->
         <scene sceneID="j9h-51-vju">
@@ -569,8 +615,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Camera" width="40" height="30"/>
+        <image name="Home" width="38" height="36"/>
+        <image name="People" width="42" height="42"/>
         <image name="chua_shaun_profile.jpg" width="534" height="534"/>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
