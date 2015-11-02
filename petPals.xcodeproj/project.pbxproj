@@ -38,6 +38,7 @@
 		4DCDF8121BE4B79D0039A682 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8111BE4B79D0039A682 /* PhotoViewController.swift */; };
 		4DCDF8141BE4B7B30039A682 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8131BE4B7B30039A682 /* FriendSearchViewController.swift */; };
 		4DCDF8171BE505750039A682 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8161BE505750039A682 /* PhotoTakingHelper.swift */; };
+		4DCDF81A1BE5B22C0039A682 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF8191BE5B22C0039A682 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		4DCDF8111BE4B79D0039A682 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4DCDF8131BE4B7B30039A682 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		4DCDF8161BE505750039A682 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
+		4DCDF8191BE5B22C0039A682 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		4D3D03831BBCDDFE00EE673D /* petPals */ = {
 			isa = PBXGroup;
 			children = (
+				4DCDF8181BE5B2160039A682 /* Models */,
 				4DCDF8151BE504BB0039A682 /* PhotoTaking */,
 				4D5A684F1BD98A8200706B24 /* PetListTableViewCell.swift */,
 				4D3D03841BBCDDFE00EE673D /* AppDelegate.swift */,
@@ -224,6 +227,14 @@
 				4DCDF8161BE505750039A682 /* PhotoTakingHelper.swift */,
 			);
 			path = PhotoTaking;
+			sourceTree = "<group>";
+		};
+		4DCDF8181BE5B2160039A682 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DCDF8191BE5B22C0039A682 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +372,7 @@
 				4D3D03891BBCDDFE00EE673D /* SecondViewController.swift in Sources */,
 				4D5A68961BDDE72D00706B24 /* PetProfileViewController.swift in Sources */,
 				4D9670991BC0CAA3000313AB /* Profile.swift in Sources */,
+				4DCDF81A1BE5B22C0039A682 /* Post.swift in Sources */,
 				4DCDF8141BE4B7B30039A682 /* FriendSearchViewController.swift in Sources */,
 				4D9670951BC0B504000313AB /* EditProfileController.swift in Sources */,
 				4DCDF8171BE505750039A682 /* PhotoTakingHelper.swift in Sources */,
