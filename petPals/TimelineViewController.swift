@@ -11,14 +11,37 @@ import Parse
 
 class TimelineViewController: UIViewController {
   
+  @IBOutlet weak var tableView: UITableView!
   var photoTakingHelper: PhotoTakingHelper?
+  var posts: [Post] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.tabBarController?.delegate = self
   }
-
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    ParseHelper.timelineRequestForCurrentUser {
+      (result, error: NSError?) -> Void in
+      self.posts = result as? [Post] ?? []
+      
+      for post in self.posts {
+        let data = try! post.imageFile?.getData()
+        post.image = UIImage(data: data!, scale:1.0)
+      }
+      
+      self.tableView.reloadData()
+    }
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
   func takePhoto() {
     // instantiate photo taking class, provide callback for when photo is selected
     photoTakingHelper =
@@ -41,13 +64,7 @@ extension TimelineViewController: UITabBarControllerDelegate {
       } else {
         return true
       }
-}
-      
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -58,5 +75,23 @@ extension TimelineViewController: UITabBarControllerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension TimelineViewController: UITableViewDataSource {
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // 1
+    return posts.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    // 1
+    let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
+    
+    // 2
+    cell.postImageView.image = posts[indexPath.row].image
+    
+    return cell
+  }
+  
 }

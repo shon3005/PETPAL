@@ -502,7 +502,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
+                                <rect key="frame" x="195.5" y="279.5" width="209.5" height="41.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -514,18 +514,58 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aCu-Qy-6iE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="320" id="9fW-PF-6rm" customClass="PostTableViewCell" customModule="petPals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="320"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9fW-PF-6rm" id="Ong-Y9-eNZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aje-qg-Lfc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aje-qg-Lfc" firstAttribute="leading" secondItem="Ong-Y9-eNZ" secondAttribute="leading" id="8iR-b5-JEL"/>
+                                                <constraint firstItem="aje-qg-Lfc" firstAttribute="centerY" secondItem="Ong-Y9-eNZ" secondAttribute="centerY" id="8w7-ID-wo0"/>
+                                                <constraint firstAttribute="trailing" secondItem="aje-qg-Lfc" secondAttribute="trailing" id="ED2-fS-Vpe"/>
+                                                <constraint firstItem="aje-qg-Lfc" firstAttribute="top" secondItem="Ong-Y9-eNZ" secondAttribute="top" id="apl-Rf-t0R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postImageView" destination="aje-qg-Lfc" id="f94-Aw-gkO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="uby-Gn-WUR"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstItem="aCu-Qy-6iE" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="-20" id="HdU-tP-Y40"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="aCu-Qy-6iE" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="Vcz-JN-9rY"/>
+                            <constraint firstItem="aCu-Qy-6iE" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ZSi-vr-Jzh"/>
+                            <constraint firstItem="aCu-Qy-6iE" firstAttribute="centerX" secondItem="NDk-cv-Gan" secondAttribute="centerX" id="o8A-KO-fP4"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="aCu-Qy-6iE" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="sbA-Xw-Ocn"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="aCu-Qy-6iE" secondAttribute="bottom" id="yXc-fK-DNy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="home" image="Home" id="cPa-gy-q4n">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="aCu-Qy-6iE" id="gHG-4e-jdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
