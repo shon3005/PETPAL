@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-// import Bond
+import Bond
 
 class TimelineViewController: UIViewController {
   

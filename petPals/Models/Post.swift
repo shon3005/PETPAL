@@ -8,7 +8,7 @@
 
 import Foundation
 import Parse
-// import Bond
+import Bond
 
 // 1 To create a custom Parse class you need to inherit from PFObject and implement the PFSubclassing protocol
 class Post : PFObject, PFSubclassing {
