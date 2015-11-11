@@ -40,12 +40,10 @@
 		4DCDF81D1BE84BAB0039A682 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF81C1BE84BAB0039A682 /* PostTableViewCell.swift */; };
 		4DCDF8201BE86FBA0039A682 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDF81F1BE86FBA0039A682 /* ParseHelper.swift */; };
 		83EBE84049546351725E0DF1 /* Pods_petPals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB50855F5141AB4D5A79D57 /* Pods_petPals.framework */; };
-		CEE5CDB1DB7AF920D41A32E6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43190E5F2A49B8A318E4C09A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DB50855F5141AB4D5A79D57 /* Pods_petPals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petPals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E08B35780A26D4FEF267521 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		43190E5F2A49B8A318E4C09A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3D03811BBCDDFE00EE673D /* petPals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petPals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3D03841BBCDDFE00EE673D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 		4DCDF8191BE5B22C0039A682 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4DCDF81C1BE84BAB0039A682 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		4DCDF81F1BE86FBA0039A682 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
-		5060F978ED8F700490F4D050 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8A0AD5109CA0AAB07041039B /* Pods-petPals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petPals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-petPals/Pods-petPals.debug.xcconfig"; sourceTree = "<group>"; };
 		A8F189DA85923925D032400D /* Pods-petPals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petPals.release.xcconfig"; path = "Pods/Target Support Files/Pods-petPals/Pods-petPals.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +105,6 @@
 				4D94CB6E1BC3557B008A8F6A /* Accounts.framework in Frameworks */,
 				4D94CB6B1BC354C3008A8F6A /* Parse.framework in Frameworks */,
 				4D94CB6A1BC354C3008A8F6A /* Bolts.framework in Frameworks */,
-				CEE5CDB1DB7AF920D41A32E6 /* Pods.framework in Frameworks */,
 				83EBE84049546351725E0DF1 /* Pods_petPals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +234,6 @@
 		FB45DFDE571BBFA12D205A19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E08B35780A26D4FEF267521 /* Pods.debug.xcconfig */,
-				5060F978ED8F700490F4D050 /* Pods.release.xcconfig */,
 				8A0AD5109CA0AAB07041039B /* Pods-petPals.debug.xcconfig */,
 				A8F189DA85923925D032400D /* Pods-petPals.release.xcconfig */,
 			);
@@ -500,7 +494,9 @@
 					"$(PROJECT_DIR)/petPals",
 				);
 				INFOPLIST_FILE = petPals/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShaunChua.petPals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -516,7 +512,9 @@
 					"$(PROJECT_DIR)/petPals",
 				);
 				INFOPLIST_FILE = petPals/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShaunChua.petPals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
