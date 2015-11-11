@@ -26,7 +26,7 @@ class TimelineViewController: UIViewController {
     super.viewDidAppear(animated)
     
     ParseHelper.timelineRequestForCurrentUser {
-      (result: [AnyObject]?, error: NSError?) -> Void in
+      (result, error) -> Void in
       
       // In the completion block we receive all posts that meet our requirements. The Parse framework hands us an array of type [AnyObject]?. However, we would like to store the posts in an array of type [Post]. In this step we check if it is possible to cast the result into a [Post]; if that's not possible (e.g. because the result is nil) we store an empty array ([]) in self.posts. The ?? operator is called the nil coalescing operator in Swift. If the statement before this operator returns nil, the return value will be replaced with the value after the operator.
       self.posts = result as? [Post] ?? []
@@ -79,6 +79,11 @@ extension TimelineViewController: UITabBarControllerDelegate {
 
 extension TimelineViewController: UITableViewDataSource {
   
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // 1
+    return posts.count
+  }
+  
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     // In this line we cast cell to our custom class PostTableViewCell. (In order to access the specific properties of our custom table view cell, we need to perform a cast to the type of our custom class. Without this cast the cell variable would have a type of a plain old UITableViewCell instead of our PostTableViewCell.)
     let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
@@ -91,6 +96,4 @@ extension TimelineViewController: UITableViewDataSource {
     
     return cell
   }
-
-  
 }

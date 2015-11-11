@@ -22,41 +22,11 @@
 //  THE SOFTWARE.
 //
 
-#if os(iOS)
-
 import UIKit
 
-extension UISwitch {
-  
-  private struct AssociatedKeys {
-    static var OnKey = "bnd_OnKey"
-  }
-  
-  public var bnd_on: Observable<Bool> {
-    if let bnd_on: AnyObject = objc_getAssociatedObject(self, &AssociatedKeys.OnKey) {
-      return bnd_on as! Observable<Bool>
-    } else {
-      let bnd_on = Observable<Bool>(self.on)
-      objc_setAssociatedObject(self, &AssociatedKeys.OnKey, bnd_on, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-      
-      var updatingFromSelf: Bool = false
-      
-      bnd_on.observeNew { [weak self] on in
-        if !updatingFromSelf {
-          self?.on = on
-        }
-      }
-      
-      self.bnd_controlEvent.filter { $0 == UIControlEvents.ValueChanged }.observe { [weak self, weak bnd_on] event in
-        guard let unwrappedSelf = self, let bnd_on = bnd_on else { return }
-        updatingFromSelf = true
-        bnd_on.next(unwrappedSelf.on)
-        updatingFromSelf = false
-      }
-      
-      return bnd_on
-    }
+extension UINavigationBar {
+
+  public var bnd_barTintColor: Observable<UIColor?> {
+    return bnd_associatedObservableForValueForKey("barTintColor")
   }
 }
-
-#endif
